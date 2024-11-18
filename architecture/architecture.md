@@ -1,7 +1,13 @@
 # Architecture
 
-:heavy_check_mark:_(COMMENT) Add a description of the architecture of your application and create a diagram like the one below. Link to the diagram in this document._
+### Blog Platform - Container View
 
-![eShopOnContainers Architecture](https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/media/eshoponcontainers-development-architecture.png)
+Het platform is opgebouwd uit meerdere microservices die via RabbitMQ en een Spring Gateway communiceren. Netflix Eureka wordt gebruikt voor service discovery. Elke service heeft een specifieke verantwoordelijkheid:  
 
-[Source](https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/introduce-eshoponcontainers-reference-app)
+- **Post Service**: Beheert blogposts (CRUD-operaties).  
+- **Review Service**: Verwerkt beoordelingen van blogposts.  
+- **Comment Service**: Beheert reacties op blogposts.  
+- **Config Service**: Centrale configuratie voor alle microservices.  
+- **RabbitMQ**: Asynchrone berichtuitwisseling tussen microservices.  
+- **Spring Gateway**: API-gateway voor routing en beveiliging.  
+
