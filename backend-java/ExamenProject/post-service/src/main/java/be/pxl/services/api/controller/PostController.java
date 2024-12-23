@@ -25,6 +25,11 @@ public class PostController {
         return postService.getPublishedPosts();
     }
 
+    @GetMapping("/review")
+    public List<PostResponse> getPostsByStatus() {
+        return postService.getToBeReviewedPosts();
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createPost(@RequestBody PostRequest post) {

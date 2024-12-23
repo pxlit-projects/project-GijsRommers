@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -66,6 +65,14 @@ public class PostService implements IPostService {
     public List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime startDate, LocalDateTime endDate) {
         log.info("Fetching filtered posts with content: {}, author: {}, startDate: {}, endDate: {}", content, author, startDate, endDate);
         return postRepository.findByContentContainingAndAuthorContainingAndCreatedAtBetweenAndStatus(content, author, startDate, endDate, PostStatus.PUBLISHED)
+                .stream()
+                .map(PostResponse::new)
+                .toList();
+    }
+
+    @Override
+    public List<PostResponse> getToBeReviewedPosts() {
+        return postRepository.findPostsByStatus(PostStatus.PENDING_APPROVAL)
                 .stream()
                 .map(PostResponse::new)
                 .toList();
