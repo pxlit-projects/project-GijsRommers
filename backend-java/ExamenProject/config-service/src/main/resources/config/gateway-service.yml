@@ -1,0 +1,45 @@
+server:
+  port: 8083
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      globalcors:
+        corsConfiguration:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:4200"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: post-service
+          uri: lb://post-service
+          predicates:
+            - Path=/api/post/**
+          filters:
+            - RewritePath=/api/post/(?<path>.*), /${path}
+        - id: review-service
+          uri: lb://review-service
+          predicates:
+            - Path=/api/review/**
+          filters:
+            - RewritePath=/api/review/(?<path>.*), /${path}
+        - id: comment-service
+          uri: lb://comment-service
+          predicates:
+            - Path=/api/comment/**
+          filters:
+            - RewritePath=/api/comment/(?<path>.*), /${path}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
