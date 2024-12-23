@@ -10,7 +10,7 @@ spring:
         corsConfiguration:
           '[/**]':
             allowedOrigins:
-              - "http://localhost:4200"
+              - "*"
             allowedMethods:
               - "*"
             allowedHeaders:
@@ -25,7 +25,7 @@ spring:
           predicates:
             - Path=/api/posts/**
           filters:
-            - RewritePath=/api/posts/(?<path>.*), /${path}
+            - RewritePath=/api/posts/(?<path>.*), /$\{path}
         - id: review-service
           uri: lb://review-service
           predicates:
