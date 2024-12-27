@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/posts")
 @RequiredArgsConstructor
 @Slf4j
 public class PostController {
@@ -26,7 +26,7 @@ public class PostController {
     }
 
     @GetMapping("/review")
-    public List<PostResponse> getPostsByStatus() {
+    public List<PostResponse> getToReviewedPosts() {
         return postService.getToBeReviewedPosts();
     }
 

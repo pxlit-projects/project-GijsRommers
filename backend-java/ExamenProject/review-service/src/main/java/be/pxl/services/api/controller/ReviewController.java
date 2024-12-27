@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/review")
 @RequiredArgsConstructor
 public class ReviewController {
     private final IReviewService reviewService;
