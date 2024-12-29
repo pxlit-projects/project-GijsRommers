@@ -36,7 +36,7 @@ spring:
         - id: comment-service
           uri: lb://comment-service
           predicates:
-            - Path=/api/comment/**
+            - Path=/api/comments/**
           filters:
             - RewritePath=/api/(?<path>.*), /$\{path}
 
