@@ -1,7 +1,7 @@
 package be.pxl.services.domain;
 
 
-import be.pxl.services.api.dto.request.ReviewDTO;
+import be.pxl.services.api.dto.request.ReviewRequest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +25,7 @@ public class Review {
     private String comment;
     private LocalDateTime reviewTime;
 
-    public Review(ReviewDTO reviewDTO) {
+    public Review(ReviewRequest reviewDTO) {
         this.postId = reviewDTO.postId();
         this.username = reviewDTO.username();
         this.comment = reviewDTO.comment();

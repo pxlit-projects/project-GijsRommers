@@ -1,7 +1,9 @@
 package be.pxl.services.services;
 
-import be.pxl.services.api.dto.request.ReviewDTO;
+import be.pxl.services.api.dto.request.ReviewRequest;
 import be.pxl.services.api.dto.response.PostResponse;
+import be.pxl.services.api.dto.response.ReviewResponse;
+import be.pxl.services.api.exceptions.NotFoundException;
 import be.pxl.services.client.PostClient;
 import be.pxl.services.domain.Review;
 import be.pxl.services.repository.ReviewRepository;
@@ -26,11 +28,15 @@ public class ReviewService implements IReviewService {
     }
 
     @Override
-    public void saveReview(ReviewDTO reviewDTO) {
+    public void saveReview(ReviewRequest reviewDTO) {
         log.info("Saving review: {}", reviewDTO);
         Review review = new Review(reviewDTO);
         reviewRepository.save(review);
     }
 
-
+    @Override
+    public List<ReviewResponse> getReviewByPostId(Long postId) {
+        log.info("Fetching review for post ID: {}", postId);
+        return reviewRepository.findByPostId(postId).stream().map(ReviewResponse::new).toList();
+    }
 }
