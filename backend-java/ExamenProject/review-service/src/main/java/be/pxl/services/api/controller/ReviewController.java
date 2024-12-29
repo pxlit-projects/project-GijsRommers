@@ -1,16 +1,13 @@
 package be.pxl.services.api.controller;
 
+import be.pxl.services.api.dto.request.ReviewDTO;
 import be.pxl.services.api.dto.response.PostResponse;
 import be.pxl.services.services.IPostStatusListenerService;
 import be.pxl.services.services.IReviewQueueService;
 import be.pxl.services.services.IReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,8 +32,9 @@ public class ReviewController {
     }
 
     @PostMapping("/reject/{postId}")
-    public void rejectPost(@PathVariable String postId) {
+    public void rejectPost(@PathVariable String postId, @RequestBody ReviewDTO reviewDTO) {
         log.info("Received request to reject post with ID: {}", postId);
+        reviewService.saveReview(reviewDTO);
         reviewQueueService.sendRejectionMessage(postId);
     }
 }
