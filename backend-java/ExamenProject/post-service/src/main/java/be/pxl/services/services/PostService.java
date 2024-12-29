@@ -37,19 +37,13 @@ public class PostService implements IPostService {
     @Override
     public void updatePost(Long id, PostRequest postRequest) {
         log.info("Updating post with ID: {}", id);
-        Optional<Post> optionalPost = postRepository.findById(id);
-        if (optionalPost.isPresent()) {
-            Post post = optionalPost.get();
-            post.setTitle(postRequest.title());
-            post.setContent(postRequest.content());
-            post.setAuthor(postRequest.author());
-            post.setStatus(postRequest.isDraft() ? PostStatus.DRAFT : PostStatus.PENDING_APPROVAL);
-            postRepository.save(post);
-            log.info("Post updated with ID: {}", post.getId());
-        } else {
-            log.error("Post not found with ID: {}", id);
-            throw new NotFoundException("Post not found with id " + id);
-        }
+        Post post = postRepository.findById(id).orElseThrow(() -> new NotFoundException("Post not found with id " + id));
+        post.setTitle(postRequest.title());
+        post.setContent(postRequest.content());
+        post.setAuthor(postRequest.author());
+        post.setStatus(postRequest.isDraft() ? PostStatus.DRAFT : PostStatus.PENDING_APPROVAL);
+        postRepository.save(post);
+        log.info("Post updated with ID: {}", post.getId());
     }
 
     @Override

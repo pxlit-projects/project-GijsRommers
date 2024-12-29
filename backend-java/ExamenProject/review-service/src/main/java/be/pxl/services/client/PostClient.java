@@ -8,6 +8,6 @@
 
     @FeignClient(name = "post-service")
     public interface PostClient {
-        @GetMapping("/posts/review")  // This should match ReviewController's path
+        @GetMapping("/posts/review")
         List<PostResponse> getToBeReviewedPosts();
     }

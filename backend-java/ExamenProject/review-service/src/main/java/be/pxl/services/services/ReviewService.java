@@ -14,9 +14,7 @@ import java.util.List;
 public class ReviewService implements IReviewService {
 
     private final PostClient postServiceClient;
-
-
-
+    
     @Override
     public List<PostResponse> getToReviewedPosts() {
         log.info("Fetching posts to be reviewed");
