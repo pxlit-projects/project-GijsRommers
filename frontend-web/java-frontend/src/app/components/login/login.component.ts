@@ -6,6 +6,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatOption, MatSelect } from '@angular/material/select';
+import { LoginModel } from '../../models/login.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,20 +21,18 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatSelect,
+    MatOption
   ]
 })
 export class LoginComponent {
-  username: string = '';
-  role: string = '';
+  loginData: LoginModel = { username: '', role: '' };
 
-  constructor(protected authService: AuthService) {}
+  constructor(protected authService: AuthService, private router: Router) {}
 
   login() {
-    this.authService.login(this.username, this.role);
-  }
-
-  logout() {
-    this.authService.logout();
+    this.authService.login(this.loginData.username, this.loginData.role);
+    this.router.navigate(['/']);
   }
 }

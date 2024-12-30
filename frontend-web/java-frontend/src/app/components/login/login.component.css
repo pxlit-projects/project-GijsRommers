@@ -1,0 +1,29 @@
+.login-card, .logout-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-actions, .logout-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.whiteText {
+  color: white;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
