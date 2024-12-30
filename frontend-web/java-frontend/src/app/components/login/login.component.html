@@ -1,0 +1,23 @@
+@if (!(authService.isLoggedIn | async)) {
+  <mat-card>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="username" placeholder="Enter your username">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <input matInput [(ngModel)]="role" placeholder="Enter your role">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </mat-card-content>
+  </mat-card>
+} @else {
+  <mat-card>
+    <mat-card-content>
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+      <button mat-raised-button>Protected Button</button>
+    </mat-card-content>
+  </mat-card>
+}
+
