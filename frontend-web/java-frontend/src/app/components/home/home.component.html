@@ -1,7 +1,17 @@
-@for (post of posts; track post) {
+@for (post of posts; track trackByPost($index, post)) {
   <div>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-    <p><em>By {{ post.author }} on {{ post.createdDate | date }}</em></p>
+    <mat-card class="post-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle>By {{ post.author }} on {{ post.createdDate | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post.content }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Read More</button>
+        <button mat-button>Share</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 }
