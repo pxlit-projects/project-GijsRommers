@@ -3,7 +3,7 @@
     <mat-card-title class="whiteText">Login</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class="login-form">
+    <div class="login-form">
       <mat-form-field appearance="outline">
         <mat-label class="">Username</mat-label>
         <input matInput [(ngModel)]="loginData.username" placeholder="Enter your username">
@@ -18,7 +18,7 @@
       <div class="login-actions">
         <button mat-raised-button color="primary" (click)="login()">Login</button>
       </div>
-    </form>
+    </div>
   </mat-card-content>
 </mat-card>
 

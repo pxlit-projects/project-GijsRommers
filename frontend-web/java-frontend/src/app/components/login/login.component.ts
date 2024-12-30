@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { MatOption, MatSelect } from '@angular/material/select';
 import { LoginModel } from '../../models/login.model';
 import {Router} from '@angular/router';
@@ -16,7 +16,6 @@ import {Router} from '@angular/router';
   standalone: true,
   styleUrls: ['./login.component.css'],
   imports: [
-    CommonModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
@@ -24,7 +23,7 @@ import {Router} from '@angular/router';
     FormsModule,
     MatSelect,
     MatOption
-  ]
+]
 })
 export class LoginComponent {
   loginData: LoginModel = { username: '', role: '' };
@@ -32,6 +31,7 @@ export class LoginComponent {
   constructor(protected authService: AuthService, private router: Router) {}
 
   login() {
+    console.log(this.loginData);
     this.authService.login(this.loginData.username, this.loginData.role);
     this.router.navigate(['/']);
   }

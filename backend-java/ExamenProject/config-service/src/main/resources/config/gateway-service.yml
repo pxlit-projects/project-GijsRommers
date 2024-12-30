@@ -10,11 +10,11 @@ spring:
         corsConfiguration:
           '[/**]':
             allowedOrigins:
-              - "*"
+              - "http://localhost:4200"
             allowedMethods:
               - "*"
             allowedHeaders:
-              - "*"
+              - "Content-Type"
             allowCredentials: true
       discovery:
         locator:
@@ -32,14 +32,12 @@ spring:
             - Path=/api/reviews/**
           filters:
             - RewritePath=/api/(?<path>.*), /$\{path}
-
         - id: comment-service
           uri: lb://comment-service
           predicates:
             - Path=/api/comments/**
           filters:
             - RewritePath=/api/(?<path>.*), /$\{path}
-
 eureka:
   client:
     serviceUrl:

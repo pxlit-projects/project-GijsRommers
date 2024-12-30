@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {Post} from '../../models/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,14 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  getPosts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.baseUrl);
+  }
+  getFilteredPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}/filtered`);
   }
 
-  getFilteredPosts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/filtered`);
-  }
-
-  getPostById(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
-  }
-
-  reviewPost(postId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/review/${postId}`);
+  getPostById(id: string): Observable<Post> {
+    return this.http.get<Post>(`${this.baseUrl}/${id}`);
   }
 }
