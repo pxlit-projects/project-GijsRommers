@@ -1,0 +1,44 @@
+.post-detail-card {
+  color: white;
+  margin: 16px;
+  border-radius: 8px;
+}
+
+h3 {
+  margin: 16px;
+}
+
+form {
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div h3 {
+  font-weight: lighter;
+}
+form h3 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-form-field textarea {
+  color: white;
+}
+
+button[type="submit"] {
+  display: block;
+  margin-left: auto;
+}
+
+.backButton {
+  margin: 16px;
+}
+
+

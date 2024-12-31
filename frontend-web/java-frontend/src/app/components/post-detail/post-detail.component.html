@@ -1,0 +1,64 @@
+<app-header/>
+
+@if (post) {
+  <div>
+    <mat-card class="post-detail-card">
+      <mat-card-header>
+        <mat-card-title>{{ post?.title }}</mat-card-title>
+        <mat-card-subtitle>By {{ post?.author }} on {{ post?.createdDate | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post?.content }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+}
+
+<mat-card class="post-detail-card">
+  <div>
+    <h3>Add a Comment</h3>
+    <form (ngSubmit)="onSubmit()" #commentForm="ngForm">
+      <mat-form-field>
+        <mat-label>Comment</mat-label>
+        <textarea matInput [(ngModel)]="newComment.content" name="content" required></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!commentForm.form.valid">Submit</button>
+    </form>
+  </div>
+</mat-card>
+
+@if (comments && comments.length > 0) {
+  <div>
+    <h3>Comments</h3>
+    @for (comment of comments; track trackByComment($index, comment)) {
+      <div>
+        <mat-card class="comment-card post-detail-card">
+          <mat-card-header>
+            <mat-card-title>{{ comment.userName }}</mat-card-title>
+            <mat-card-subtitle>{{ comment.createdAt | date }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            @if (!isEditing(comment)) {
+              <p>{{ comment.content }}</p>
+            }
+            @if (isEditing(comment)) {
+              <form (ngSubmit)="onEditSubmit(comment)" #editForm="ngForm">
+                <mat-form-field>
+                  <mat-label>Edit Comment</mat-label>
+                  <textarea matInput [(ngModel)]="comment.content" name="content" required></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!editForm.form.valid">Save</button>
+                <button mat-button type="button" (click)="cancelEdit()">Cancel</button>
+              </form>
+            }
+          </mat-card-content>
+          @if (comment.userName === currentUserName && !isEditing(comment)) {
+            <mat-card-actions>
+              <button mat-button (click)="editComment(comment)">Edit</button>
+            </mat-card-actions>
+          }
+        </mat-card>
+      </div>
+    }
+  </div>
+}

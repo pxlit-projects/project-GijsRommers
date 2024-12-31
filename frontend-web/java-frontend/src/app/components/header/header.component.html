@@ -1,0 +1,13 @@
+<!-- header.component.html -->
+<mat-toolbar color="primary">
+  <span>Hello, {{ username }}</span>
+  <span class="spacer"></span>
+  <div>
+    <button mat-button [routerLink]="['/']">Home</button>
+    @if (role === 'admin') {
+      <button mat-button [routerLink]="['/add-post']">Add Post</button>
+      <button mat-button [routerLink]="['/review-post']">Review</button>
+    }
+    <button mat-button (click)="logout()">Logout</button>
+  </div>
+</mat-toolbar>

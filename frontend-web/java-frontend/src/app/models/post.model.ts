@@ -1,8 +1,8 @@
 export interface Post {
-  id: number;
+  id?: number;
   title: string;
   content: string;
   author: string;
-  createdDate: string;
+  createdDate?: string;
   isDraft: boolean;
 }

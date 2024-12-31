@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {Comment} from '../../models/comment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +12,14 @@ export class CommentService {
 
   constructor(private http: HttpClient) {}
 
-  getComments(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getCommentsByPostId(postId: string): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.baseUrl}/post/${postId}`);
   }
 
-  getCommentsByPostId(postId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/post/${postId}`);
+  addComment(comment: Comment): Observable<Comment> {
+    return this.http.post<Comment>(this.baseUrl, comment);
   }
-
-  getCommentById(commentId: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${commentId}`);
+  updateComment(comment: Comment): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/${comment.id}`, { content: comment.content });
   }
 }

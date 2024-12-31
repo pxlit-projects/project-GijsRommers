@@ -17,7 +17,6 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long postId;
-    private Long userId;
     private String username;
     private String content;
     private LocalDateTime createdAt;
@@ -25,7 +24,6 @@ public class Comment {
 
     public Comment(CommentRequest commentRequest) {
         this.postId = commentRequest.postId();
-        this.userId = commentRequest.userId();
         this.username = commentRequest.userName();
         this.content = commentRequest.content();
         this.createdAt = LocalDateTime.now();

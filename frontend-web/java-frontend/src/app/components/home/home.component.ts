@@ -1,7 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import { PostService } from '../../service/post/post.service';
 import { Post } from '../../models/post.model';
-import { DatePipe } from '@angular/common';
+import {MatButton} from '@angular/material/button';
 import {
   MatCard,
   MatCardActions,
@@ -10,28 +12,32 @@ import {
   MatCardSubtitle,
   MatCardTitle
 } from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
+import {DatePipe} from '@angular/common';
+import {HeaderComponent} from '../header/header.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
   imports: [
-    DatePipe,
-    MatCard,
-    MatCardTitle,
-    MatCardContent,
+    MatButton,
     MatCardActions,
     MatCardSubtitle,
+    MatCardTitle,
     MatCardHeader,
-    MatButton
+    MatCard,
+    RouterLink,
+    DatePipe,
+    MatCardContent,
+    RouterOutlet,
+    HeaderComponent
   ],
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe((data: Post[]) => {
@@ -39,7 +45,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  trackByPost(index: number, post: Post): number {
+  trackByPost(index: number, post: Post): number | undefined {
     return post.id;
   }
 }

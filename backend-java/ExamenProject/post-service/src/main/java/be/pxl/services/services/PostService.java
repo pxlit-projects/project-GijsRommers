@@ -71,4 +71,10 @@ public class PostService implements IPostService {
                 .map(PostResponse::new)
                 .toList();
     }
+
+    @Override
+    public PostResponse getPostById(Long id) {
+        Post post = postRepository.findById(id).orElseThrow(() -> new NotFoundException("Post not found with id " + id));
+        return new PostResponse(post);
+    }
 }

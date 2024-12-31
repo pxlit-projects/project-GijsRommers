@@ -1,0 +1,23 @@
+<app-header/>
+<mat-card>
+  <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="post.title" name="title" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Content</mat-label>
+      <textarea matInput [(ngModel)]="post.content" name="content" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input matInput [(ngModel)]="post.author" name="author" required>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="post.isDraft" name="isDraft">Save as Draft</mat-checkbox>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</mat-card>

@@ -1,21 +1,8 @@
 .post-card {
-  background-color: #2e2e2e;
-  color: #ffffff;
+  color: white;
   margin-bottom: 16px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.post-card mat-card-title {
-  color: #ffcc00;
-}
-
-.post-card mat-card-subtitle {
-  color: #cccccc;
-}
-
-.post-card mat-card-content p {
-  color: #cccccc;
 }
 
 .post-card mat-card-actions {
@@ -23,6 +10,9 @@
   justify-content: flex-end;
 }
 
-.post-card mat-card-actions button {
-  color: #ffcc00;
+div {
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }

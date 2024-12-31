@@ -1,3 +1,4 @@
+<app-header/>
 @for (post of posts; track trackByPost($index, post)) {
   <div>
     <mat-card class="post-card">
@@ -5,12 +6,8 @@
         <mat-card-title>{{ post.title }}</mat-card-title>
         <mat-card-subtitle>By {{ post.author }} on {{ post.createdDate | date }}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <p>{{ post.content }}</p>
-      </mat-card-content>
       <mat-card-actions>
-        <button mat-button>Read More</button>
-        <button mat-button>Share</button>
+        <button mat-button [routerLink]="['/post', post.id]">Read More</button>
       </mat-card-actions>
     </mat-card>
   </div>

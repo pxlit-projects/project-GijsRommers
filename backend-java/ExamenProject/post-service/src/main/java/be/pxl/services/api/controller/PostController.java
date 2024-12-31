@@ -25,6 +25,11 @@ public class PostController {
         return postService.getPublishedPosts();
     }
 
+    @GetMapping("/{id}")
+    public PostResponse getPostById(@PathVariable Long id) {
+        return postService.getPostById(id);
+    }
+
     @GetMapping("/review")
     public List<PostResponse> getToReviewedPosts() {
         return postService.getToBeReviewedPosts();

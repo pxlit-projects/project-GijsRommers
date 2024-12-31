@@ -22,4 +22,8 @@ export class PostService {
   getPostById(id: string): Observable<Post> {
     return this.http.get<Post>(`${this.baseUrl}/${id}`);
   }
+
+  createPost(post: Post): Observable<void> {
+    return this.http.post<void>(this.baseUrl, post);
+  }
 }

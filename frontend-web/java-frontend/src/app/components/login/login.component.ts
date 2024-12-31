@@ -31,7 +31,6 @@ export class LoginComponent {
   constructor(protected authService: AuthService, private router: Router) {}
 
   login() {
-    console.log(this.loginData);
     this.authService.login(this.loginData.username, this.loginData.role);
     this.router.navigate(['/']);
   }

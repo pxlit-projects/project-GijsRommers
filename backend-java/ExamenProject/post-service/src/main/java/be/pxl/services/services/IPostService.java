@@ -12,4 +12,5 @@ public interface IPostService {
     List<PostResponse> getPublishedPosts();
     List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime startDate, LocalDateTime endDate);
     List<PostResponse> getToBeReviewedPosts();
+    PostResponse getPostById(Long id);
 }

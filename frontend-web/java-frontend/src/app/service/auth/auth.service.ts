@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
-  private username = new BehaviorSubject<string | null>(null);
-  private role = new BehaviorSubject<string | null>(null);
+  username = new BehaviorSubject<string | null>(null);
+  role = new BehaviorSubject<string | null>(null);
 
   login(username: string, role: string) {
     this.loggedIn.next(true);
@@ -22,6 +23,11 @@ export class AuthService {
   }
 
   isLoggedIn(): Observable<boolean> {
-    return this.loggedIn.asObservable();
+    // return this.loggedIn.asObservable();
+    if (environment.production) {
+      return this.loggedIn.asObservable();
+    } else {
+      return new BehaviorSubject<boolean>(true).asObservable();
+    }
   }
 }
