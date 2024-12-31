@@ -54,4 +54,10 @@ public class PostController {
         log.info("Received request to get filtered posts with content: {}, author: {}, startDate: {}, endDate: {}", content, author, startDate, endDate);
         return postService.getFilteredPosts(content, author, startDate, endDate);
     }
+
+    @GetMapping("/user/{username}")
+    public List<PostResponse> getUserPosts(@PathVariable String username) {
+        log.info("Received request to get all user posts");
+        return postService.getUserPosts(username);
+    }
 }

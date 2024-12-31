@@ -77,4 +77,9 @@ public class PostService implements IPostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new NotFoundException("Post not found with id " + id));
         return new PostResponse(post);
     }
+
+    @Override
+    public List<PostResponse> getUserPosts(String username) {
+        return postRepository.findPostsByAuthor(username).stream().map(PostResponse::new).toList();
+    }
 }
