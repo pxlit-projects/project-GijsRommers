@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatButton} from '@angular/material/button';
 import {HeaderComponent} from '../header/header.component';
+import {AuthService} from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-add-post',
@@ -29,7 +30,9 @@ import {HeaderComponent} from '../header/header.component';
 export class AddPostComponent {
   post: Post = { title: '', content: '', author: '', isDraft: false };
 
-  constructor(private postService: PostService, private router: Router) {}
+  constructor(private postService: PostService, private router: Router, private authService: AuthService) {
+    this.post.author = this.authService.username.value ?? 'defaultUsername'; ;
+  }
 
   onSubmit() {
     this.postService.createPost(this.post).subscribe(() => {

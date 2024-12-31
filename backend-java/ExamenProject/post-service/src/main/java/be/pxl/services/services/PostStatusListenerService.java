@@ -28,7 +28,7 @@ public class PostStatusListenerService implements IPostStatusListenerService {
             return;
         }
         Post post = optionalPost.get();
-        post.setStatus(PostStatus.APPROVED);
+        post.setStatus(PostStatus.PUBLISHED);
         postRepository.save(post);
     }
 

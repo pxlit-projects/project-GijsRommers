@@ -1,0 +1,18 @@
+<app-header/>
+
+@for (post of posts; track post) {
+  <mat-card class="post-card">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ post.content }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      @if (post.id !== undefined) {
+        <button mat-button (click)="openRejectDialog(post.id!)">Reject</button>
+        <button mat-button (click)="approvePost(post.id!)">Approve</button>
+      }
+    </mat-card-actions>
+  </mat-card>
+}

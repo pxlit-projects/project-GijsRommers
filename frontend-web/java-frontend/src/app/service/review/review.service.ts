@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {environment} from '../../../environments/environment';
+import { environment } from '../../../environments/environment';
+import { RejectionModel } from '../../models/Rejection.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class ReviewService {
     return this.http.post(`${this.baseUrl}/approve/${postId}`, {});
   }
 
-  rejectReview(postId: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/reject/${postId}`, {});
+  rejectReview(postId: string, review: RejectionModel): Observable<any> {
+    return this.http.post(`${this.baseUrl}/reject/${postId}`, review);
   }
 
   getReviewByPostId(postId: string): Observable<any> {
