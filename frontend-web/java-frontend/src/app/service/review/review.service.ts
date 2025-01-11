@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { RejectionModel } from '../../models/Rejection.model';
 import {Review} from '../../models/Review.model';
+import {Post} from '../../models/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class ReviewService {
 
   constructor(private http: HttpClient) {}
 
-  getReviews(): Observable<Review[]> {
-    return this.http.get<Review[]>(`${this.baseUrl}`);
+  getReviews(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}`);
   }
 
   approveReview(postId: string): Observable<void> {

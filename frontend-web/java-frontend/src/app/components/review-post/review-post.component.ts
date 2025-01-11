@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Post } from '../../models/post.model';
 import { ReviewService } from '../../service/review/review.service';
+import { AuthService } from '../../service/auth/auth.service';
 import { FormsModule } from '@angular/forms';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatButton } from '@angular/material/button';
 import { HeaderComponent } from '../header/header.component';
 import { RejectDialogComponent } from '../reject-dialog/reject-dialog.component';
 import { RejectionModel } from '../../models/Rejection.model';
+import { Post } from '../../models/post.model';
 
 @Component({
   selector: 'app-review-post',
@@ -27,10 +28,19 @@ import { RejectionModel } from '../../models/Rejection.model';
 })
 export class ReviewPostComponent implements OnInit {
   posts: Post[] = [];
+  username: string | null = null;
 
-  constructor(private reviewService: ReviewService, public dialog: MatDialog) {}
+  constructor(
+    private reviewService: ReviewService,
+    private authService: AuthService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.authService.username.subscribe(username => {
+      this.username = username;
+    });
+
     this.reviewService.getReviews().subscribe((posts: Post[]) => {
       this.posts = posts;
     });
@@ -50,19 +60,21 @@ export class ReviewPostComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.rejectPost(postId, result);
+        this.rejectReview(postId, result);
       }
     });
   }
 
-  rejectPost(postId: number, reason: string): void {
-    const reviewRequest: RejectionModel = {
-      postId,
-      username: 'currentUsername', // Replace with actual username
-      comment: reason
-    };
-    this.reviewService.rejectReview(postId.toString(), reviewRequest).subscribe(() => {
-      this.posts = this.posts.filter(post => post.id !== postId);
-    });
+  rejectReview(postId: number, reason: string): void {
+    if (this.username) {
+      const rejectionRequest: RejectionModel = {
+        postId: postId,
+        username: this.username,
+        comment: reason
+      };
+      this.reviewService.rejectReview(postId.toString(), rejectionRequest).subscribe(() => {
+        this.posts = this.posts.filter(post => post.id !== postId);
+      });
+    }
   }
 }
