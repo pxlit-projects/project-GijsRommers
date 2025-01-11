@@ -81,8 +81,10 @@ export class PostDetailComponent implements OnInit {
 
   onSubmit(): void {
     this.commentService.addComment(this.newComment).subscribe(() => {
-      this.comments.push({ ...this.newComment });
       this.newComment.content = '';
+      this.commentService.getCommentsByPostId(this.newComment.postId.toString()).subscribe((data: Comment[]) => {
+        this.comments = data;
+      });
     });
   }
 
@@ -105,6 +107,12 @@ export class PostDetailComponent implements OnInit {
         this.comments[index] = { ...comment };
       }
       this.editingComment = null;
+    });
+  }
+
+  deleteComment(commentId: number): void {
+    this.commentService.deleteComment(commentId).subscribe(() => {
+      this.comments = this.comments.filter(comment => comment.id !== commentId);
     });
   }
 }
