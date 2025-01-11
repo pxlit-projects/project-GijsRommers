@@ -3,13 +3,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../../service/post/post.service';
 import { Post } from '../../models/post.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatCard } from '@angular/material/card';
+import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} from '@angular/material/card';
 import {MatError, MatFormField, MatLabel} from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { MatButton } from '@angular/material/button';
 import {AuthService} from '../../service/auth/auth.service';
+import {ReviewService} from '../../service/review/review.service';
+import {Review} from '../../models/Review.model';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-edit-post',
@@ -23,19 +26,26 @@ import {AuthService} from '../../service/auth/auth.service';
     ReactiveFormsModule,
     MatCheckbox,
     MatButton,
-    MatLabel
+    MatLabel,
+    MatCardHeader,
+    MatCardContent,
+    MatCardTitle,
+    MatCardSubtitle,
+    DatePipe
   ],
   styleUrls: ['./edit-post.component.css']
 })
 export class EditPostComponent implements OnInit {
   postForm: FormGroup;
+  reviews: Review[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
     private router: Router,
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private reviewService: ReviewService,
   ) {
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
@@ -50,6 +60,9 @@ export class EditPostComponent implements OnInit {
     if (postId) {
       this.postService.getPostById(postId).subscribe((data: Post) => {
         this.postForm.patchValue(data);
+      });
+      this.reviewService.getReviewByPostId(postId).subscribe((data: Review[]) => {
+        this.reviews = data;
       });
     }
     this.authService.username.subscribe(username => {
