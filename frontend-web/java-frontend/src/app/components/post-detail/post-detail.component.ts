@@ -80,7 +80,7 @@ export class PostDetailComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.commentService.addComment(this.newComment).subscribe((comment: Comment) => {
+    this.commentService.addComment(this.newComment).subscribe(() => {
       this.comments.push({ ...this.newComment });
       this.newComment.content = '';
     });
