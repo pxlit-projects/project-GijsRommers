@@ -26,7 +26,7 @@ export class ReviewService {
     return this.http.post<void>(`${this.baseUrl}/reject/${postId}`, review);
   }
 
-  getReviewByPostId(postId: string): Observable<Review> {
-    return this.http.get<Review>(`${this.baseUrl}/${postId}`);
+  getReviewByPostId(postId: string): Observable<Review[]> {
+    return this.http.get<Review[]>(`${this.baseUrl}/${postId}`);
   }
 }

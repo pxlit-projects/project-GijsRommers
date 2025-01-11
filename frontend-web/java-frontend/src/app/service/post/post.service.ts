@@ -26,4 +26,13 @@ export class PostService {
   createPost(post: Post): Observable<void> {
     return this.http.post<void>(this.baseUrl, post);
   }
+
+  getUserPosts(username: string): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}/user/${username}`);
+  }
+
+  updatePost(id: string, post: Post): Observable<void> {
+    return this.http.patch<void>(`${this.baseUrl}/${id}`, post);
+  }
+
 }

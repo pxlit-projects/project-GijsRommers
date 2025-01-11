@@ -4,5 +4,6 @@ export interface Post {
   content: string;
   author: string;
   createdDate?: string;
-  isDraft: boolean;
+  isDraft?: boolean;
+  status?: string;
 }

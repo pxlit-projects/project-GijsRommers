@@ -10,6 +10,7 @@ import {MatCheckbox} from '@angular/material/checkbox';
 import {MatButton} from '@angular/material/button';
 import {HeaderComponent} from '../header/header.component';
 import {AuthService} from '../../service/auth/auth.service';
+import {UserPostsComponent} from '../user-posts/user-posts.component';
 
 @Component({
   selector: 'app-add-post',
@@ -23,7 +24,8 @@ import {AuthService} from '../../service/auth/auth.service';
     MatCheckbox,
     MatButton,
     MatLabel,
-    HeaderComponent
+    HeaderComponent,
+    UserPostsComponent
   ],
   styleUrls: ['./add-post.component.css']
 })
