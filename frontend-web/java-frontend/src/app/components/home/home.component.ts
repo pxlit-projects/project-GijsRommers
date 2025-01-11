@@ -28,8 +28,6 @@ import {HeaderComponent} from '../header/header.component';
     MatCard,
     RouterLink,
     DatePipe,
-    MatCardContent,
-    RouterOutlet,
     HeaderComponent
   ],
   styleUrls: ['./home.component.css']
