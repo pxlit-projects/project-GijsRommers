@@ -11,7 +11,7 @@ import {HeaderComponent} from './components/header/header.component';
 })
 export class AppComponent {
   title = 'Java Fullstack Gijs Rommers';
-  showHeader: boolean = true;
+  showHeader = true;
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
