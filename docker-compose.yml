@@ -15,3 +15,8 @@ services:
       POSTGRES_DB: mydatabase
     volumes:
       - ./init:/docker-entrypoint-initdb.d/
+  frontend:
+    build: ./frontend-web/java-frontend
+    container_name: angular-frontend
+    ports:
+      - "80:80"
