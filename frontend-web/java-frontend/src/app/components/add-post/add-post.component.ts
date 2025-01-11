@@ -33,7 +33,12 @@ export class AddPostComponent {
   post: Post = { title: '', content: '', author: '', isDraft: false };
 
   constructor(private postService: PostService, private router: Router, private authService: AuthService) {
-    this.post.author = this.authService.username.value ?? 'defaultUsername'; ;
+    const username = this.authService.username.value;
+    if (username) {
+      this.post.author = username;
+    } else {
+      throw new Error('Username cannot be empty');
+    }
   }
 
   onSubmit() {
