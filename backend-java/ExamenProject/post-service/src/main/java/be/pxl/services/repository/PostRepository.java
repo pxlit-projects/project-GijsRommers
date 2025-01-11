@@ -15,5 +15,5 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findPostsByStatus(PostStatus status);
     List<Post> findPostsByAuthor(String author);
-    List<Post> findByContentContainingAndAuthorContainingAndCreatedAtBetweenAndStatus(String content, String author, LocalDateTime startDate, LocalDateTime endDate, PostStatus status);
+    List<Post> findByContentContainingAndAuthorContainingAndCreatedAtAfterAndStatus(String content, String author, LocalDateTime date, PostStatus status);
 }

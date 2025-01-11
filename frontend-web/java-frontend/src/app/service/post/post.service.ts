@@ -15,8 +15,9 @@ export class PostService {
   getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.baseUrl);
   }
-  getFilteredPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.baseUrl}/filtered`);
+  getFilteredPosts(content: string, author: string, date: string): Observable<Post[]> {
+    const params = { content, author, date };
+    return this.http.get<Post[]>(`${this.baseUrl}/filtered`, { params });
   }
 
   getPostById(id: string): Observable<Post> {

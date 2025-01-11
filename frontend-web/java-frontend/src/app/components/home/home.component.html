@@ -1,4 +1,28 @@
-<app-header/>
+<app-header></app-header>
+
+<mat-card id="filter">
+  <mat-card-content>
+    <form [formGroup]="filterForm" (ngSubmit)="onFilter()" id="filterForm">
+      <mat-form-field>
+        <mat-label>Content</mat-label>
+        <input matInput formControlName="content">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input matInput formControlName="author">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input matInput formControlName="date" type="date">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit" form="filterForm">Filter</button>
+    <button mat-raised-button color="warn" type="button" (click)="clearFilter()">Clear Filter</button>
+  </mat-card-actions>
+</mat-card>
+
 @for (post of posts; track trackByPost($index, post)) {
   <div>
     <mat-card class="post-card">

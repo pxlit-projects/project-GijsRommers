@@ -10,7 +10,7 @@ public interface IPostService {
     void createPost(PostRequest post);
     void updatePost(Long id, PostRequest post);
     List<PostResponse> getPublishedPosts();
-    List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime startDate, LocalDateTime endDate);
+    List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime date);
     List<PostResponse> getToBeReviewedPosts();
     PostResponse getPostById(Long id);
     List<PostResponse> getUserPosts(String username);

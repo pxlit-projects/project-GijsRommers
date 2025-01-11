@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -50,9 +51,10 @@ public class PostController {
     }
 
     @GetMapping("/filtered")
-    public List<PostResponse> getFilteredPosts(@RequestParam String content, @RequestParam String author, @RequestParam LocalDateTime startDate, @RequestParam LocalDateTime endDate) {
-        log.info("Received request to get filtered posts with content: {}, author: {}, startDate: {}, endDate: {}", content, author, startDate, endDate);
-        return postService.getFilteredPosts(content, author, startDate, endDate);
+    public List<PostResponse> getFilteredPosts(@RequestParam String content, @RequestParam String author, @RequestParam String date) {
+        log.info("Received request to get filtered posts with content: {}, author: {}, date: {}", content, author, date);
+        LocalDateTime parsedDate = (date != null && !date.isEmpty()) ? LocalDate.parse(date).atStartOfDay() : LocalDateTime.of(1970, 1, 1, 0, 0);
+        return postService.getFilteredPosts(content, author, parsedDate);
     }
 
     @GetMapping("/user/{username}")

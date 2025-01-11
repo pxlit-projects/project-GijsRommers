@@ -16,3 +16,27 @@ div {
   margin-right: auto;
   width: 80%;
 }
+
+mat-card {
+  margin: 16px;
+  padding: 16px;
+}
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-card form {
+  max-width: 100%;
+  margin: 0 auto;
+}

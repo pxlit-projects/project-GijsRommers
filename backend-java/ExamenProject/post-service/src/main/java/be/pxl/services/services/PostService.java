@@ -56,9 +56,9 @@ public class PostService implements IPostService {
     }
 
     @Override
-    public List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime startDate, LocalDateTime endDate) {
-        log.info("Fetching filtered posts with content: {}, author: {}, startDate: {}, endDate: {}", content, author, startDate, endDate);
-        return postRepository.findByContentContainingAndAuthorContainingAndCreatedAtBetweenAndStatus(content, author, startDate, endDate, PostStatus.PUBLISHED)
+    public List<PostResponse> getFilteredPosts(String content, String author, LocalDateTime date) {
+        log.info("Fetching filtered posts with content: {}, author: {}, date: {}", content, author, date);
+        return postRepository.findByContentContainingAndAuthorContainingAndCreatedAtAfterAndStatus(content, author, date, PostStatus.PUBLISHED)
                 .stream()
                 .map(PostResponse::new)
                 .toList();
