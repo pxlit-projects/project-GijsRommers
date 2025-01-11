@@ -1,13 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
-import {Router, RouterLink, RouterOutlet} from '@angular/router';
+import {RouterLink} from '@angular/router';
 import { PostService } from '../../service/post/post.service';
 import { Post } from '../../models/post.model';
 import {MatButton} from '@angular/material/button';
 import {
   MatCard,
   MatCardActions,
-  MatCardContent,
   MatCardHeader,
   MatCardSubtitle,
   MatCardTitle
@@ -35,7 +34,7 @@ import {HeaderComponent} from '../header/header.component';
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private postService: PostService, private router: Router) {}
+  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.postService.getPosts().subscribe((data: Post[]) => {
