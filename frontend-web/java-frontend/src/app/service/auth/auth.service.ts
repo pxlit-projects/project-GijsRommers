@@ -23,11 +23,6 @@ export class AuthService {
   }
 
   isLoggedIn(): Observable<boolean> {
-    // return this.loggedIn.asObservable();
-    if (environment.production) {
-      return this.loggedIn.asObservable();
-    } else {
-      return new BehaviorSubject<boolean>(true).asObservable();
-    }
+    return this.loggedIn.asObservable();
   }
 }

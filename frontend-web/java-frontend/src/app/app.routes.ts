@@ -6,11 +6,14 @@ import {PostDetailComponent} from './components/post-detail/post-detail.componen
 import {AddPostComponent} from './components/add-post/add-post.component';
 import {adminGuard} from './guard/admin/admin.guard';
 import {ReviewPostComponent} from './components/review-post/review-post.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent, canActivate: [authGuard] },
   { path: 'post/:id', component: PostDetailComponent, canActivate: [authGuard] },
   { path: 'add-post', component: AddPostComponent, canActivate: [adminGuard] },
-  { path: 'review-post', component: ReviewPostComponent, canActivate: [adminGuard] }
+  { path: 'review-post', component: ReviewPostComponent, canActivate: [adminGuard] },
+  { path: '**', component: NotFoundComponent }
+
 ];

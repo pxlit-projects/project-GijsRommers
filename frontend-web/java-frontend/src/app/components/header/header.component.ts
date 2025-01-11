@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../service/auth/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {MatButton} from '@angular/material/button';
@@ -15,7 +15,7 @@ import {MatToolbar} from '@angular/material/toolbar';
   standalone: true,
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   username: string | null = "";
   role: string | null = "";
   constructor(private authService: AuthService, private router: Router) {

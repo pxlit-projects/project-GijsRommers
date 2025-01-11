@@ -28,7 +28,7 @@ import {MatButton} from '@angular/material/button';
   styleUrls: ['./reject-dialog.component.css']
 })
 export class RejectDialogComponent {
-  reason: string = '';
+  reason = '';
 
   constructor(
     public dialogRef: MatDialogRef<RejectDialogComponent>,
