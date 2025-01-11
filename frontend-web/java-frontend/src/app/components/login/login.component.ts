@@ -31,7 +31,11 @@ export class LoginComponent {
   constructor(protected authService: AuthService, private router: Router) {}
 
   login() {
-    this.authService.login(this.loginData.username, this.loginData.role);
-    this.router.navigate(['/']);
+    if (this.loginData.username && this.loginData.role) {
+      this.authService.login(this.loginData.username, this.loginData.role);
+      this.router.navigate(['/']);
+    } else {
+      console.error('Username and role must not be empty');
+    }
   }
 }

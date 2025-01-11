@@ -40,6 +40,9 @@ module.exports = function (config) {
         }
       }
     },
+    files: [
+      { pattern: 'src/**/*.ts', included: false, served: true, watched: true } // Include all source files
+    ],
     reporters: ['progress', 'kjhtml'],
     browsers: ['Chrome'],
     restartOnFileChange: true
