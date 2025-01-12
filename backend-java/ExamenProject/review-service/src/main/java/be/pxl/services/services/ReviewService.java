@@ -3,7 +3,6 @@ package be.pxl.services.services;
 import be.pxl.services.api.dto.request.ReviewRequest;
 import be.pxl.services.api.dto.response.PostResponse;
 import be.pxl.services.api.dto.response.ReviewResponse;
-import be.pxl.services.api.exceptions.NotFoundException;
 import be.pxl.services.client.PostClient;
 import be.pxl.services.domain.Review;
 import be.pxl.services.repository.ReviewRepository;
