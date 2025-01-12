@@ -12,16 +12,35 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest(classes = ReviewServiceApplication.class)
+@Testcontainers
 @ActiveProfiles("test")
 class ReviewControllerTest {
+
+    @Container
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15-alpine")
+            .withDatabaseName("testdb")
+            .withUsername("test")
+            .withPassword("test");
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", postgres::getJdbcUrl);
+        registry.add("spring.datasource.username", postgres::getUsername);
+        registry.add("spring.datasource.password", postgres::getPassword);
+    }
 
     @Mock
     private IReviewService reviewService;
@@ -50,11 +69,29 @@ class ReviewControllerTest {
     }
 
     @Test
+    void getPostsInForSubmission_ShouldReturnEmptyList_WhenNoPostsFound() {
+        when(reviewService.getToReviewedPosts()).thenReturn(List.of());
+
+        List<PostResponse> actualPosts = reviewController.getPostsInForSubmission();
+
+        assertTrue(actualPosts.isEmpty());
+        verify(reviewService).getToReviewedPosts();
+    }
+
+    @Test
     void approvePost_ShouldSendApprovalMessage() {
         String postId = "123";
 
         reviewController.approvePost(postId);
 
+        verify(reviewQueueService).sendApprovalMessage(postId);
+    }
+
+    @Test
+    void approvePost_ShouldNotThrowException_WhenPostIdIsValid() {
+        String postId = "123";
+
+        assertDoesNotThrow(() -> reviewController.approvePost(postId));
         verify(reviewQueueService).sendApprovalMessage(postId);
     }
 
@@ -81,6 +118,17 @@ class ReviewControllerTest {
         List<ReviewResponse> actualReviews = reviewController.getReviewByPostId(postId);
 
         assertEquals(expectedReviews, actualReviews);
+        verify(reviewService).getReviewByPostId(postId);
+    }
+
+    @Test
+    void getReviewByPostId_ShouldReturnEmptyList_WhenNoReviewsFound() {
+        Long postId = 1L;
+        when(reviewService.getReviewByPostId(postId)).thenReturn(List.of());
+
+        List<ReviewResponse> actualReviews = reviewController.getReviewByPostId(postId);
+
+        assertTrue(actualReviews.isEmpty());
         verify(reviewService).getReviewByPostId(postId);
     }
 }

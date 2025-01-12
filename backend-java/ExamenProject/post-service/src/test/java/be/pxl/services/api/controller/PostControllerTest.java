@@ -3,7 +3,6 @@ package be.pxl.services.api.controller;
 import be.pxl.services.api.dto.request.PostRequest;
 import be.pxl.services.api.dto.response.PostResponse;
 import be.pxl.services.services.IPostService;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

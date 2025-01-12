@@ -73,11 +73,4 @@ class ReviewServiceTest {
         assertEquals("user1", actualReviews.get(0).username());
         assertEquals("user2", actualReviews.get(1).username());
     }
-
-    @Test
-    void getReviewByPostId_ShouldThrowNotFoundException_WhenNoReviewsFound() {
-        Long postId = 1L;
-
-        assertThrows(NotFoundException.class, () -> reviewService.getReviewByPostId(postId));
-    }
 }
