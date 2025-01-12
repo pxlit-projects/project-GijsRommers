@@ -1,6 +1,6 @@
 # Fullstack Java Project
 
-## Firstname Lastname (Class)
+## Gijs Rommers (3-AON-B)
 Change the name and Class in the title above
 
 ## Folder structure
@@ -18,3 +18,33 @@ Each folder contains its own specific `.gitignore` file.
 ## How to setup and run this application
 
 :heavy_check_mark:_(COMMENT) Add setup instructions and provide some direction to run the whole  application: frontend to backend._
+
+## How to run
+### General
+- Requirements
+    - Java 21
+    - Docker (Desktop) With Docker Compose
+
+- Clone the repository by running: 
+```sh
+git clone https://github.com/pxlit-projects/project-GijsRommers.git
+```
+### Frontend:
+- Open termnal in root folder (the one this README.md is located)
+- run the following command: 
+```sh
+docker-compose up
+```
+- This will deploy the frontend using NGINX 
+    - You can access it via http://localhost
+- It also deploys the PostgreSQL and RabbitMQ for the backend
+
+### Backend
+- Open the backend-java/ExamenProject in IntelliJ
+- Create three databases in the Postgres instance
+    - We recommend using the database tool in IntelliJ 
+    - commentservice
+    - postservice
+    - reviewservice
+- Launch the microservices
+    - Make sure the Config microservice launches first! 
