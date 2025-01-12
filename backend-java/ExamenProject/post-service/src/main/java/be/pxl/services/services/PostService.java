@@ -82,4 +82,6 @@ public class PostService implements IPostService {
     public List<PostResponse> getUserPosts(String username) {
         return postRepository.findPostsByAuthor(username).stream().map(PostResponse::new).toList();
     }
+
+
 }
