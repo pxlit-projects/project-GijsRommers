@@ -5130,3 +5130,435 @@ java.lang.IllegalStateException: ApplicationContext failure threshold (1) exceed
 2025-01-12 17:31:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-01-12 17:31:07 - HikariPool-2 - Shutdown initiated...
 2025-01-12 17:31:07 - HikariPool-2 - Shutdown completed.
+2025-01-12 18:42:21 - Starting ReviewServiceTest using Java 21.0.3 with PID 26240 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:42:21 - The following 1 profile is active: "test"
+2025-01-12 18:42:21 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:21 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:21 - Could not locate PropertySource ([ConfigServerConfigDataResource@6aba7bd3 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:42:21 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:21 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:21 - Could not locate PropertySource ([ConfigServerConfigDataResource@23d7aabe uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:42:21 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:21 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:21 - Could not locate PropertySource ([ConfigServerConfigDataResource@2985771a uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:42:22 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:42:22 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:42:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:42:22 - Finished Spring Data repository scanning in 179 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:42:23 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:42:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:42:23 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-12 18:42:23 - HHH000026: Second-level cache disabled
+2025-01-12 18:42:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:42:23 - HikariPool-1 - Starting...
+2025-01-12 18:42:24 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21425882
+2025-01-12 18:42:24 - HikariPool-1 - Start completed.
+2025-01-12 18:42:24 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:42:25 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:42:25 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:42:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:42:26 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:42:26 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:42:26 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:42:26 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:42:26 - Attempting to connect to: localhost:5672
+2025-01-12 18:42:26 - Created new connection: connectionFactory#7893e942:0/SimpleConnection@117f7853 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56808]
+2025-01-12 18:42:27 - Started ReviewServiceTest in 6.44 seconds (process running for 12.328)
+2025-01-12 18:42:27 - Saving review: ReviewRequest[postId=1, username=user, comment=comment]
+2025-01-12 18:42:27 - Fetching review for post ID: 1
+2025-01-12 18:42:28 - Creating container for image: postgres:15-alpine
+2025-01-12 18:42:28 - Container postgres:15-alpine is starting: 71ec575d42668179b6a148963f7728d70855184c4cf44465884b7ddb91834118
+2025-01-12 18:42:30 - Container postgres:15-alpine started in PT1.9868426S
+2025-01-12 18:42:30 - Container is started (JDBC URL: jdbc:postgresql://localhost:56809/testdb?loggerLevel=OFF)
+2025-01-12 18:42:30 - Starting ReviewControllerTest using Java 21.0.3 with PID 26240 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:42:30 - The following 1 profile is active: "test"
+2025-01-12 18:42:30 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:30 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:30 - Could not locate PropertySource ([ConfigServerConfigDataResource@676b7b43 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:42:30 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:30 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:30 - Could not locate PropertySource ([ConfigServerConfigDataResource@22ff341c uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:42:30 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:42:30 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:42:30 - Could not locate PropertySource ([ConfigServerConfigDataResource@2d8a62f3 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:42:30 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:42:30 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:42:30 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:42:30 - Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:42:30 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:42:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:42:30 - HHH000026: Second-level cache disabled
+2025-01-12 18:42:30 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:42:30 - HikariPool-2 - Starting...
+2025-01-12 18:42:30 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@296aba41
+2025-01-12 18:42:30 - HikariPool-2 - Start completed.
+2025-01-12 18:42:30 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:42:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:42:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:42:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:42:30 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:42:30 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:42:30 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:42:30 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:42:30 - Attempting to connect to: localhost:5672
+2025-01-12 18:42:30 - Created new connection: connectionFactory#5cdeac55:0/SimpleConnection@628799d8 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56818]
+2025-01-12 18:42:30 - Started ReviewControllerTest in 0.646 seconds (process running for 16.167)
+2025-01-12 18:42:31 - Received request to get review for post ID: 1
+2025-01-12 18:42:31 - Received request to get posts in for submission
+2025-01-12 18:42:31 - Received request to approve post with ID: 123
+2025-01-12 18:42:31 - Received request to get posts in for submission
+2025-01-12 18:42:31 - Received request to reject post with ID: 123
+2025-01-12 18:42:31 - Received request to approve post with ID: 123
+2025-01-12 18:42:31 - Received request to get review for post ID: 1
+2025-01-12 18:42:31 - Waiting for workers to finish.
+2025-01-12 18:42:31 - Waiting for workers to finish.
+2025-01-12 18:42:32 - Successfully waited for workers to finish.
+2025-01-12 18:42:32 - Successfully waited for workers to finish.
+2025-01-12 18:42:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:42:32 - HikariPool-1 - Shutdown initiated...
+2025-01-12 18:42:32 - HikariPool-1 - Shutdown completed.
+2025-01-12 18:42:32 - Waiting for workers to finish.
+2025-01-12 18:42:32 - Waiting for workers to finish.
+2025-01-12 18:42:32 - Successfully waited for workers to finish.
+2025-01-12 18:42:32 - Successfully waited for workers to finish.
+2025-01-12 18:42:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:42:32 - HikariPool-2 - Shutdown initiated...
+2025-01-12 18:42:32 - HikariPool-2 - Shutdown completed.
+2025-01-12 18:45:03 - Starting ReviewServiceTest using Java 21.0.3 with PID 4028 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:45:03 - The following 1 profile is active: "test"
+2025-01-12 18:45:03 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:03 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:03 - Could not locate PropertySource ([ConfigServerConfigDataResource@3c27fda9 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:45:03 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:03 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:03 - Could not locate PropertySource ([ConfigServerConfigDataResource@737e1ec8 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:45:03 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:03 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:03 - Could not locate PropertySource ([ConfigServerConfigDataResource@53b4b27e uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:45:03 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:45:03 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:45:04 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:45:04 - Finished Spring Data repository scanning in 186 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:45:04 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:45:04 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:45:05 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-12 18:45:05 - HHH000026: Second-level cache disabled
+2025-01-12 18:45:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:45:05 - HikariPool-1 - Starting...
+2025-01-12 18:45:05 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@51704fbb
+2025-01-12 18:45:05 - HikariPool-1 - Start completed.
+2025-01-12 18:45:05 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:45:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:45:07 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:45:07 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:45:07 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:45:07 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:45:08 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:45:08 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:45:08 - Attempting to connect to: localhost:5672
+2025-01-12 18:45:08 - Created new connection: connectionFactory#6276fd5d:0/SimpleConnection@18eb00c [delegate=amqp://guest@127.0.0.1:5672/, localPort=56853]
+2025-01-12 18:45:08 - Started ReviewServiceTest in 6.363 seconds (process running for 12.186)
+2025-01-12 18:45:09 - Saving review: ReviewRequest[postId=1, username=user, comment=comment]
+2025-01-12 18:45:09 - Fetching review for post ID: 1
+2025-01-12 18:45:09 - Creating container for image: postgres:15-alpine
+2025-01-12 18:45:09 - Container postgres:15-alpine is starting: 1ccdfcf12d1ae1970ebfa61c110c22e3375c504594227e3dd777caf6df846a1d
+2025-01-12 18:45:11 - Container postgres:15-alpine started in PT1.9524727S
+2025-01-12 18:45:11 - Container is started (JDBC URL: jdbc:postgresql://localhost:56854/testdb?loggerLevel=OFF)
+2025-01-12 18:45:11 - Starting ReviewControllerTest using Java 21.0.3 with PID 4028 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:45:11 - The following 1 profile is active: "test"
+2025-01-12 18:45:11 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:11 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:11 - Could not locate PropertySource ([ConfigServerConfigDataResource@5670964d uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:45:11 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:11 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:11 - Could not locate PropertySource ([ConfigServerConfigDataResource@11d84c31 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:45:11 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:45:11 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:45:11 - Could not locate PropertySource ([ConfigServerConfigDataResource@36d6b79b uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:45:11 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:45:11 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:45:11 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:45:11 - Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:45:11 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:45:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:45:12 - HHH000026: Second-level cache disabled
+2025-01-12 18:45:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:45:12 - HikariPool-2 - Starting...
+2025-01-12 18:45:12 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@20f9752c
+2025-01-12 18:45:12 - HikariPool-2 - Start completed.
+2025-01-12 18:45:12 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:45:12 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:45:12 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:45:12 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:45:12 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:45:12 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:45:12 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:45:12 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:45:12 - Attempting to connect to: localhost:5672
+2025-01-12 18:45:12 - Created new connection: connectionFactory#236b5ed9:0/SimpleConnection@23c12d5d [delegate=amqp://guest@127.0.0.1:5672/, localPort=56863]
+2025-01-12 18:45:12 - Started ReviewControllerTest in 0.659 seconds (process running for 16.021)
+2025-01-12 18:45:12 - Received request to get review for post ID: 1
+2025-01-12 18:45:12 - Received request to get posts in for submission
+2025-01-12 18:45:12 - Received request to approve post with ID: 123
+2025-01-12 18:45:12 - Received request to get posts in for submission
+2025-01-12 18:45:12 - Received request to reject post with ID: 123
+2025-01-12 18:45:12 - Received request to approve post with ID: 123
+2025-01-12 18:45:12 - Received request to get review for post ID: 1
+2025-01-12 18:45:13 - Waiting for workers to finish.
+2025-01-12 18:45:13 - Waiting for workers to finish.
+2025-01-12 18:45:13 - Successfully waited for workers to finish.
+2025-01-12 18:45:13 - Successfully waited for workers to finish.
+2025-01-12 18:45:13 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:45:13 - HikariPool-1 - Shutdown initiated...
+2025-01-12 18:45:13 - HikariPool-1 - Shutdown completed.
+2025-01-12 18:45:13 - Waiting for workers to finish.
+2025-01-12 18:45:13 - Waiting for workers to finish.
+2025-01-12 18:45:14 - Successfully waited for workers to finish.
+2025-01-12 18:45:14 - Successfully waited for workers to finish.
+2025-01-12 18:45:14 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:45:14 - HikariPool-2 - Shutdown initiated...
+2025-01-12 18:45:14 - HikariPool-2 - Shutdown completed.
+2025-01-12 18:46:34 - Starting ReviewServiceTest using Java 21.0.3 with PID 26128 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:46:34 - The following 1 profile is active: "test"
+2025-01-12 18:46:34 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:34 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:34 - Could not locate PropertySource ([ConfigServerConfigDataResource@51594a05 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:46:34 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:34 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:34 - Could not locate PropertySource ([ConfigServerConfigDataResource@2a24c9ea uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:46:34 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:34 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:34 - Could not locate PropertySource ([ConfigServerConfigDataResource@5304be1e uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:46:35 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:46:35 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:46:35 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:46:36 - Finished Spring Data repository scanning in 245 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:46:36 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:46:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:46:37 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-12 18:46:37 - HHH000026: Second-level cache disabled
+2025-01-12 18:46:37 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:46:37 - HikariPool-1 - Starting...
+2025-01-12 18:46:38 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@558529df
+2025-01-12 18:46:38 - HikariPool-1 - Start completed.
+2025-01-12 18:46:38 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:46:39 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:46:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:46:40 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:46:40 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:46:40 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:46:41 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:46:41 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:46:41 - Attempting to connect to: localhost:5672
+2025-01-12 18:46:41 - Created new connection: connectionFactory#3238fa85:0/SimpleConnection@6e384ec2 [delegate=amqp://guest@127.0.0.1:5672/, localPort=56996]
+2025-01-12 18:46:41 - Started ReviewServiceTest in 8.401 seconds (process running for 15.144)
+2025-01-12 18:46:42 - Saving review: ReviewRequest[postId=1, username=user, comment=comment]
+2025-01-12 18:46:42 - Fetching review for post ID: 1
+2025-01-12 18:46:42 - Creating container for image: postgres:15-alpine
+2025-01-12 18:46:42 - Container postgres:15-alpine is starting: 5facff1cf2a68420108a07402d4a542fb89c99c1a2d75f3383025c3368356280
+2025-01-12 18:46:44 - Container postgres:15-alpine started in PT2.1238944S
+2025-01-12 18:46:44 - Container is started (JDBC URL: jdbc:postgresql://localhost:56997/testdb?loggerLevel=OFF)
+2025-01-12 18:46:45 - Starting ReviewControllerTest using Java 21.0.3 with PID 26128 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:46:45 - The following 1 profile is active: "test"
+2025-01-12 18:46:45 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:45 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:45 - Could not locate PropertySource ([ConfigServerConfigDataResource@77a9e32 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:46:45 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:45 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:45 - Could not locate PropertySource ([ConfigServerConfigDataResource@5010692 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:46:45 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:46:45 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:46:45 - Could not locate PropertySource ([ConfigServerConfigDataResource@7792873 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:46:45 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:46:45 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:46:45 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:46:45 - Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:46:45 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:46:45 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:46:45 - HHH000026: Second-level cache disabled
+2025-01-12 18:46:45 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:46:45 - HikariPool-2 - Starting...
+2025-01-12 18:46:45 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@3aecf27d
+2025-01-12 18:46:45 - HikariPool-2 - Start completed.
+2025-01-12 18:46:45 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:46:45 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:46:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:46:45 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:46:45 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:46:45 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:46:45 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:46:45 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:46:45 - Attempting to connect to: localhost:5672
+2025-01-12 18:46:45 - Created new connection: connectionFactory#744eedfa:0/SimpleConnection@4416a449 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57008]
+2025-01-12 18:46:45 - Started ReviewControllerTest in 0.839 seconds (process running for 19.466)
+2025-01-12 18:46:46 - Received request to get review for post ID: 1
+2025-01-12 18:46:46 - Received request to get posts in for submission
+2025-01-12 18:46:46 - Received request to approve post with ID: 123
+2025-01-12 18:46:46 - Received request to get posts in for submission
+2025-01-12 18:46:46 - Received request to reject post with ID: 123
+2025-01-12 18:46:46 - Received request to approve post with ID: 123
+2025-01-12 18:46:46 - Received request to get review for post ID: 1
+2025-01-12 18:46:46 - Waiting for workers to finish.
+2025-01-12 18:46:46 - Waiting for workers to finish.
+2025-01-12 18:46:47 - Successfully waited for workers to finish.
+2025-01-12 18:46:47 - Successfully waited for workers to finish.
+2025-01-12 18:46:47 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:46:47 - HikariPool-1 - Shutdown initiated...
+2025-01-12 18:46:47 - HikariPool-1 - Shutdown completed.
+2025-01-12 18:46:47 - Waiting for workers to finish.
+2025-01-12 18:46:47 - Waiting for workers to finish.
+2025-01-12 18:46:47 - Successfully waited for workers to finish.
+2025-01-12 18:46:47 - Successfully waited for workers to finish.
+2025-01-12 18:46:47 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:46:47 - HikariPool-2 - Shutdown initiated...
+2025-01-12 18:46:47 - HikariPool-2 - Shutdown completed.
+2025-01-12 18:49:01 - Starting ReviewServiceTest using Java 21.0.3 with PID 22308 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:49:01 - The following 1 profile is active: "test"
+2025-01-12 18:49:01 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:01 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:01 - Could not locate PropertySource ([ConfigServerConfigDataResource@63abc0ef uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:49:01 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:01 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:01 - Could not locate PropertySource ([ConfigServerConfigDataResource@38bf4fda uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:49:01 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:01 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:01 - Could not locate PropertySource ([ConfigServerConfigDataResource@26a38029 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:49:01 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:49:01 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:49:02 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:49:02 - Finished Spring Data repository scanning in 194 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:49:02 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:49:03 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:49:03 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-12 18:49:03 - HHH000026: Second-level cache disabled
+2025-01-12 18:49:03 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:49:03 - HikariPool-1 - Starting...
+2025-01-12 18:49:03 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15c8074f
+2025-01-12 18:49:03 - HikariPool-1 - Start completed.
+2025-01-12 18:49:04 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:49:05 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:49:05 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:49:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:49:05 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:49:06 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:49:06 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:49:06 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:49:06 - Attempting to connect to: localhost:5672
+2025-01-12 18:49:06 - Created new connection: connectionFactory#54c95e8a:0/SimpleConnection@7419539b [delegate=amqp://guest@127.0.0.1:5672/, localPort=57136]
+2025-01-12 18:49:06 - Started ReviewServiceTest in 6.679 seconds (process running for 12.77)
+2025-01-12 18:49:07 - Saving review: ReviewRequest[postId=1, username=user, comment=comment]
+2025-01-12 18:49:07 - Fetching review for post ID: 1
+2025-01-12 18:49:08 - Creating container for image: postgres:15-alpine
+2025-01-12 18:49:08 - Container postgres:15-alpine is starting: a5cb9b1e58fb2948009f870974d2eb962f2e33f3bdc6a49e465f39d89c7cbc7f
+2025-01-12 18:49:10 - Container postgres:15-alpine started in PT2.0009337S
+2025-01-12 18:49:10 - Container is started (JDBC URL: jdbc:postgresql://localhost:57137/testdb?loggerLevel=OFF)
+2025-01-12 18:49:10 - Starting ReviewControllerTest using Java 21.0.3 with PID 22308 (started by gijsr in D:\Projects\project-GijsRommers\backend-java\ExamenProject\review-service)
+2025-01-12 18:49:10 - The following 1 profile is active: "test"
+2025-01-12 18:49:10 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:10 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:10 - Could not locate PropertySource ([ConfigServerConfigDataResource@6daa1d35 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:49:10 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:10 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:10 - Could not locate PropertySource ([ConfigServerConfigDataResource@294da0fd uris = array<String>['http://localhost:8888'], optional = true, profiles = 'test']): I/O error on GET request for "http://localhost:8888/application/test": Connection refused: getsockopt
+2025-01-12 18:49:10 - Fetching config from server at : http://localhost:8888
+2025-01-12 18:49:10 - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt. Will be trying the next url if available
+2025-01-12 18:49:10 - Could not locate PropertySource ([ConfigServerConfigDataResource@2b6a8956 uris = array<String>['http://localhost:8888'], optional = true, profiles = 'default']): I/O error on GET request for "http://localhost:8888/application/default": Connection refused: getsockopt
+2025-01-12 18:49:10 - Overriding bean definition for bean 'post-service.FeignClientSpecification' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientSpecification; scope=; abstract=false; lazyInit=null; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:49:10 - Overriding bean definition for bean 'be.pxl.services.client.PostClient' with an equivalent definition: replacing [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null] with [Generic bean: class=org.springframework.cloud.openfeign.FeignClientFactoryBean; scope=; abstract=false; lazyInit=null; autowireMode=2; dependencyCheck=0; autowireCandidate=true; primary=true; fallback=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null]
+2025-01-12 18:49:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-12 18:49:10 - Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+2025-01-12 18:49:10 - BeanFactory id=60ab9dff-02df-3e23-b586-17b36d3849ea
+2025-01-12 18:49:10 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-12 18:49:10 - HHH000026: Second-level cache disabled
+2025-01-12 18:49:10 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-12 18:49:10 - HikariPool-2 - Starting...
+2025-01-12 18:49:10 - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@59d89dc3
+2025-01-12 18:49:10 - HikariPool-2 - Start completed.
+2025-01-12 18:49:10 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 15.10
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-12 18:49:10 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-12 18:49:10 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:49:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-12 18:49:10 - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-12 18:49:10 - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-01-12 18:49:10 - Eureka HTTP Client uses RestTemplate.
+2025-01-12 18:49:10 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-12 18:49:10 - Attempting to connect to: localhost:5672
+2025-01-12 18:49:10 - Created new connection: connectionFactory#2c9d6f1a:0/SimpleConnection@12077b6c [delegate=amqp://guest@127.0.0.1:5672/, localPort=57146]
+2025-01-12 18:49:10 - Started ReviewControllerTest in 0.68 seconds (process running for 16.664)
+2025-01-12 18:49:10 - Received request to get review for post ID: 1
+2025-01-12 18:49:10 - Received request to get posts in for submission
+2025-01-12 18:49:10 - Received request to approve post with ID: 123
+2025-01-12 18:49:10 - Received request to get posts in for submission
+2025-01-12 18:49:10 - Received request to reject post with ID: 123
+2025-01-12 18:49:10 - Received request to approve post with ID: 123
+2025-01-12 18:49:10 - Received request to get review for post ID: 1
+2025-01-12 18:49:11 - Waiting for workers to finish.
+2025-01-12 18:49:11 - Waiting for workers to finish.
+2025-01-12 18:49:11 - Successfully waited for workers to finish.
+2025-01-12 18:49:11 - Successfully waited for workers to finish.
+2025-01-12 18:49:11 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:49:11 - HikariPool-1 - Shutdown initiated...
+2025-01-12 18:49:11 - HikariPool-1 - Shutdown completed.
+2025-01-12 18:49:11 - Waiting for workers to finish.
+2025-01-12 18:49:11 - Waiting for workers to finish.
+2025-01-12 18:49:12 - Successfully waited for workers to finish.
+2025-01-12 18:49:12 - Successfully waited for workers to finish.
+2025-01-12 18:49:12 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-12 18:49:12 - HikariPool-2 - Shutdown initiated...
+2025-01-12 18:49:12 - HikariPool-2 - Shutdown completed.

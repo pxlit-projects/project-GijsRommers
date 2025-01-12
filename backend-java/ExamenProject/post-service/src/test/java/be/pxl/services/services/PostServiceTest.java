@@ -1,5 +1,6 @@
 package be.pxl.services.services;
 
+import be.pxl.services.PostServiceApplication;
 import be.pxl.services.api.dto.request.PostRequest;
 import be.pxl.services.api.dto.response.PostResponse;
 import be.pxl.services.api.exceptions.NotFoundException;
@@ -23,7 +24,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+@SpringBootTest(classes = PostServiceApplication.class)
 @Testcontainers
 @ActiveProfiles("test")
 class PostServiceTest {
